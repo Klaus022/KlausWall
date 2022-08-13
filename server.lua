@@ -43,12 +43,10 @@ RegisterCommand("wall",function(source,args)
 		if wall_infos[source].wallstats == true then
 			wall_infos[source].wallstats = false
 			TriggerClientEvent(chain..":wall",source,wall_infos[source].wallstats)
-	--		print(json.encode(wall_infos,{indent = true}))
 			SendWebhookMessage(wall,"```prolog\n[ID]:" ..user_id.. " Desligou - Wall  "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 		else
 			wall_infos[source].wallstats = true
 			TriggerClientEvent(chain..":wall",source,wall_infos[source].wallstats)
-	--		print(json.encode(wall_infos,{indent = true}))
 			SendWebhookMessage(wall,"```prolog\n[ID]:" ..user_id.. " Ligou - Wall  "..os.date("\n[Data]: %d/%m/%Y [Hora]: %H:%M:%S").." \r```")
 		end
 	end
